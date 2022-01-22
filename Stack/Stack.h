@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int MAXSIZE = 8;
-int stack[8];
+int stack[25];
 int top =-1;
 
 int isEmpty()
@@ -23,8 +23,7 @@ void push(int data)
 {
 	if(!isFull())
 	{
-		top += 1;
-		stack[top] = data;
+		stack[++top] = data;
 	}
 	else
 	{
@@ -36,8 +35,7 @@ int pop()
 {
 	if(!isEmpty())
 	{
-		top -= 1;
-		return stack[top+1];
+		return stack[top--];
 	}
 	else
 	{
